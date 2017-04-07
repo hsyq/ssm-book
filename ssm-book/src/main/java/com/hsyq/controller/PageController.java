@@ -4,6 +4,7 @@ import org.apache.activemq.filter.function.regexMatchFunction;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 页面跳转
@@ -12,26 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
+@RequestMapping("/manager")
 public class PageController {
 	
-	@RequestMapping("/manager")
+	@RequestMapping("/")
 	public String showManagerPage(){
 		return "manager/index";
 	}
 	
-	@RequestMapping("/manager/{page}")
+	@RequestMapping("/{page}")
 	public String showManagerPage(@PathVariable String page) {
 		return "manager/"+page;
 	}
 	
-	@RequestMapping("/test")
-	public String showError() {
-		return "ok";
-	}
-
-/*	@RequestMapping("/js/*")
-	public String getJs() {
-		return "/js";
-	}*/
+	
 	
 }
