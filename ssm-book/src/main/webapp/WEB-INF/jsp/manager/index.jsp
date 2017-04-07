@@ -38,7 +38,7 @@
          	<li>
          		<span>索引库管理</span>
          		<ul>
-	         		<li data-options="attributes:{'url':'import-index'}">导入索引库</li>
+	         		<li data-options="attributes:{'url':'manager/import-index'}">导入索引库</li>
 	         	</ul>
          	</li>
          </ul>

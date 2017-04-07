@@ -1,5 +1,6 @@
 package com.hsyq.controller;
 
+import org.apache.activemq.filter.function.regexMatchFunction;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,5 +28,10 @@ public class PageController {
 	public String showError() {
 		return "ok";
 	}
+
+/*	@RequestMapping("/js/*")
+	public String getJs() {
+		return "/js";
+	}*/
 	
 }

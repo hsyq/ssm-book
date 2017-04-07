@@ -17,7 +17,7 @@
 %>>
 ${pageContext.request.contextPath }
 
-
+<a href="${pageContext.request.contextPath }/aaa">ssm-book/aaa</a>
 <br>
 <c:if test="${3>1}">3大于1</c:if>
 </html>
