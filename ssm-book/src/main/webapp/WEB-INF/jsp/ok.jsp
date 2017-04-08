@@ -29,16 +29,27 @@
 
 		// 获取当前协议+主机+端口+项目
 		var phpp = protocol +"//"+ host + $projectName;
-	// alert(phpp);
-//http:localhost/ssm-book
+		// alert(phpp);
+		//http:localhost/ssm-book
+		
 		$("#ajax").click(function() {
 		// var url="http://localhost/ssm-book/ajax";
-		var url = phpp+"/test/ajax";
-			var param = "yy";
+		//var url = "${pageContext.request.contextPath }/test/ajax";
+		/* var param = "yy";
 			$.get(url,function(d){
 				alert(d);
 			}) 
-
+ */		
+		
+			$.ajax({
+				type:"post",
+				url:"${pageContext.request.contextPath }/test/sendJson",
+				contentType:"application/json;charset=utf-8",
+				data:'{"userId":123,"username":"jack"}',
+				success:function(data){
+					alert(data);
+				}	
+			})
 		})
 	})
 </script>
@@ -63,4 +74,15 @@
 	<br>
 
 	<input type="button" id="ajax" value="点我">
+	
+	<br>
+	上传图片测试<br>
+	<form action="">
+	<input>
+		<img alt="" src="/pic">
+	</form>
+	
+	<br>
+	RestFul风格测试<br>
+	<a href="${pageContext.request.contextPath }/user/123">/user/123</a>
 </html>
